@@ -8,7 +8,7 @@ const axiosInstance = axios.create();
 // request interceptor for adding token
 axiosInstance.interceptors.request.use((config) => {
   // add token to request headers
-  config.baseURL = `https://${domain}.naacpro.in/api/v1`;
+  config.baseURL = `https://dev.naacpro.in/api/v1`;
   // config.baseURL = `http://192.168.29.191:8000/api/v1`;
   config.headers = Object.assign(
     {
