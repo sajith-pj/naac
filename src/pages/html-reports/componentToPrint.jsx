@@ -13,15 +13,17 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
         <tr key={index}>
           <td> {obj[0]} </td>
           <td>
-            {typeof obj[1] === "boolean"
-              ? obj[1]
-                ? "true"
-                : "false"
-              : Array.isArray(obj)
-              ? obj.length === 0
-                ? ""
-                : obj[1]
-              : ""}
+            {typeof obj[1] === "boolean" ? (
+              obj[1] ? (
+                "true"
+              ) : (
+                "false"
+              )
+            ) : checkURL(obj[1]) ? (
+              <img src={obj[1]} width="500" height="300" alt="" />
+            ) : (
+              obj[1]
+            )}
           </td>
         </tr>
       );
@@ -31,7 +33,7 @@ const ComponentToPrint = React.forwardRef((props, ref) => {
   const imageData = (obj) => {
     if (obj !== null && checkURL(obj)) {
       return <img alt="" className="report-image" src={obj} />;
-    } else if (obj !== null) {
+    } else if (obj && obj !== null) {
       return (
         <Document
           file={obj}

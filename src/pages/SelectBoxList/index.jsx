@@ -89,6 +89,8 @@ const SelectBoxList = () => {
   ];
   const addDropdown = () => {
     setOpen(true);
+    setInputValues({});
+    setNewSelectBoxOptions([]);
     setErr({});
   };
 

@@ -140,6 +140,7 @@ function Events() {
 
   const addEvent = () => {
     setErr({});
+    setInputValues({});
     setOpen(true);
   };
 
